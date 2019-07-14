@@ -29,7 +29,7 @@ public class ContactCreationTests {
   @Test
   public void testContactCreationTests() throws Exception {
     gotoContactCreationPage(); //Переход на страницу создания контактов
-    fillContactForm("firstname", "middlename", "lastname", "123", "321"); //Заполнение данных о контакте
+    fillContactForm(new ContactData("firstname", "middlename", "lastname", "123", "321")); //Заполнение данных о контакте
     submitContactCreation(); //Отправка данных
     returnToContactPage(); //Переход на страницу контактов
     logout(); //Выход из системы
@@ -47,19 +47,19 @@ public class ContactCreationTests {
     wd.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]")).click();
   }
 
-  private void fillContactForm(String firstname, String middlename, String lastname, String mobile, String work) {
+  private void fillContactForm(ContactData contactData) {
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(firstname);
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
     wd.findElement(By.name("middlename")).clear();
-    wd.findElement(By.name("middlename")).sendKeys(middlename);
+    wd.findElement(By.name("middlename")).sendKeys(contactData.getMiddlename());
     wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(lastname);
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
     wd.findElement(By.name("mobile")).click();
     wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys(mobile);
+    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
     wd.findElement(By.name("work")).clear();
-    wd.findElement(By.name("work")).sendKeys(work);
+    wd.findElement(By.name("work")).sendKeys(contactData.getWork());
   }
 
   private void gotoContactCreationPage() {
