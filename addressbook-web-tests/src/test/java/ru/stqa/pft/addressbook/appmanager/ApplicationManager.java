@@ -44,14 +44,7 @@ public class ApplicationManager {
       }
     }
 
-    private boolean isAlertPresent() {
-      try {
-        wd.switchTo().alert();
-        return true;
-      } catch (NoAlertPresentException e) {
-        return false;
-      }
-    }
+
 
     public ContacHelper getContactHelper(){
         return contactHelper;
