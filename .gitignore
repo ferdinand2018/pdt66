@@ -16,3 +16,13 @@ sandbox/build/classes/java/main/MyFirstApplication.class
 sandbox/build/libs/sandbox.jar
 sandbox/build/tmp/jar/MANIFEST.MF
 .idea/workspace.xml
+sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstApplication.class
+sandbox/out/production/classes/MyFirstApplication.class
+sandbox/out/production/classes/MyFirstApplication.class
+sandbox/out/production/classes/META-INF/sandbox_main.kotlin_module
+sandbox/out/production/classes/MyFirstApplication.class
+*.class
+.idea/modules/sandbox_main.iml
+.idea/libraries/Gradle__org_apache_extras_beanshell_bsh_2_0b6.xml
+.idea/libraries/Gradle__com_beust_jcommander_1_72.xml
+.idea/libraries/Gradle__com_beust_jcommander_1_72.xml
