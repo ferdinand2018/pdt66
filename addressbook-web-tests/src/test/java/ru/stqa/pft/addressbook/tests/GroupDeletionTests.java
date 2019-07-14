@@ -5,9 +5,9 @@ import org.testng.annotations.*;
 public class GroupDeletionTests extends TestBase {
   @Test
   public void testGroupDeletion() throws Exception {
-    app.gotoGroupPage();
-    app.selectGroup();
-    app.deleteGroup();
-    app.returnToGroupPage();
+    app.getNavigationHelper().gotoGroupPage();
+    app.getGroupHelper().selectGroup();
+    app.getGroupHelper().deleteGroup();
+    app.getGroupHelper().returnToGroupPage();
   }
 }
