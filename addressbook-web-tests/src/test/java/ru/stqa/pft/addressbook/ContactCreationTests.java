@@ -27,7 +27,7 @@ public class ContactCreationTests {
   }
 
   @Test
-  public void testContactCreationTests() throws Exception {
+  public void testContactCreation() throws Exception {
     gotoContactCreationPage(); //Переход на страницу создания контактов
     fillContactForm(new ContactData("firstname", "middlename", "lastname", "123", "321")); //Заполнение данных о контакте
     submitContactCreation(); //Отправка данных
