@@ -19,16 +19,6 @@ public class ContactData {
         this.id = id;
     }
 
-    public ContactData(int id, String firstname, String middlename, String lastname, String mobile, String work, String group) {
-        this.id = id;
-        this.firstname = firstname;
-        this.middlename = middlename;
-        this.lastname = lastname;
-        this.mobile = mobile;
-        this.work = work;
-        this.group = group;
-    }
-
     @Override
     public String toString() {
         return "ContactData{" +
@@ -50,6 +40,16 @@ public class ContactData {
     @Override
     public int hashCode() {
         return Objects.hash(firstname, lastname);
+    }
+
+    public ContactData(int id, String firstname, String middlename, String lastname, String mobile, String work, String group) {
+        this.id = id;
+        this.firstname = firstname;
+        this.middlename = middlename;
+        this.lastname = lastname;
+        this.mobile = mobile;
+        this.work = work;
+        this.group = group;
     }
 
     public ContactData(String firstname, String middlename, String lastname, String mobile, String work, String group) {
