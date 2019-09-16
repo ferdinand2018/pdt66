@@ -52,7 +52,7 @@ public class ContactData {
         this.group = group;
     }
 
-    public ContactData(String firstname, String middlename, String lastname, String mobile, String work, String group) {
+    public ContactData(String lastname, String firstname, String middlename,  String mobile, String work, String group) {
         this.id = Integer.MAX_VALUE;
         this.firstname = firstname;
         this.middlename = middlename;

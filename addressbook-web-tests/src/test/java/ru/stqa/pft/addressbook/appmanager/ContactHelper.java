@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactHelper extends HelperBase{
+
     public ContactHelper(WebDriver wd) {
         super(wd);
     }
@@ -54,8 +55,10 @@ public class ContactHelper extends HelperBase{
         //click(By.name("selected[]"));
     }
 
-    public void initContactModification() {
-        click(By.xpath("//img[@alt='Edit']"));
+    public int initContactModification(int i) {
+        //click(By.xpath("//img[@alt='Edit']"));   НЕ АКТУАЛЬНЫЙ!
+        click(By.xpath("(//img[@alt='Edit'])[" + i + "]"));
+        return i;
     }
 
     public void submitContactModification() {
@@ -81,10 +84,15 @@ public class ContactHelper extends HelperBase{
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for(WebElement element : elements){
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
-            String firstname = element.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[3]")).getText();
-            String lastname = element.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[2]")).getText();
-            ContactData contact = new ContactData(id, firstname, lastname, null, null, null, null);
+            //int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
+            /* СЛИШКОМ ДЛИНЫЕ ЛОКАТОРЫ */
+            /*-----------------------------------------------------------------*/
+            //String firstname = element.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[3]")).getText();
+            //String lastname = element.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[2]")).getText();
+            /*-----------------------------------------------------------------*/
+            String firstname = element.findElement(By.xpath("//td[3]")).getText();
+            String lastname = element.findElement(By.xpath("//td[2]")).getText();
+            ContactData contact = new ContactData(lastname, firstname, null, null, null, null);
             contacts.add(contact);
         }
         return contacts;
