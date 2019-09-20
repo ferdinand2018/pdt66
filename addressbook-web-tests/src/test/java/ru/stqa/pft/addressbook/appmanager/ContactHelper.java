@@ -90,8 +90,8 @@ public class ContactHelper extends HelperBase{
             //String firstname = element.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[3]")).getText();
             //String lastname = element.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[2]")).getText();
             /*-----------------------------------------------------------------*/
-            String firstname = element.findElement(By.xpath("//td[3]")).getText();
-            String lastname = element.findElement(By.xpath("//td[2]")).getText();
+            String firstname = element.findElement(By.xpath(".//td[3]")).getText();
+            String lastname = element.findElement(By.xpath(".//td[2]")).getText();
             ContactData contact = new ContactData(lastname, firstname, null, null, null, null);
             contacts.add(contact);
         }
