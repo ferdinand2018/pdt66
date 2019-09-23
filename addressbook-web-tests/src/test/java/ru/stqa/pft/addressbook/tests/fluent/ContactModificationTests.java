@@ -21,12 +21,12 @@ public class ContactModificationTests extends TestBase {
             app.contact().create(new ContactData()
                     .withFirstname("Иван").withLastname("Иванов")
                     .withMiddlename("Иванович").withMobile("+79772222333")
-                    .withWork("+79772222333").withGroup(null), true);
+                    .withWork("+79772222333").withGroup("test1"), true);
         }
     }
 
     @Test
-    public void testsContacModification(){
+    public void testsContactModification(){
         Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData().withId(modifiedContact.getId())
